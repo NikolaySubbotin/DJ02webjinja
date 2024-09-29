@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'main/index.html')
+    return render(request, 'main/index.html', {'caption': "Django"})
 def new_view(request):
     return render(request, 'main/new.html')
 
