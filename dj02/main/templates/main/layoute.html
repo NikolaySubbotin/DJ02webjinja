@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+    {% block title %}
+    <title>Шаблон сайта</title>
+    {% endblock %}
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Sidebar (aside) -->
+        <aside class="col-md-3 bg-light p-3 border rounded">
+            <div class="text-center">
+                <img src="{% static 'main/img/qwer.png' %}" alt="шаблон человека" class="img-fluid rounded-circle mb-3" width="150px">
+                <h4>Шаблон человека Django</h4>
+            </div>
+            <ul class="nav flex-column">
+                {% include 'main/nav.html' %}
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="col-md-9">
+            <div class="content p-4 bg-white border rounded shadow-sm">
+                {% block content %}
+                <!-- Основной контент -->
+                {% endblock %}
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- Включаем подвал -->
+{% include 'main/footer.html' %}
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
