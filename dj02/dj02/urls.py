@@ -5,4 +5,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('main.urls')),  # подключаем маршруты приложения myapp
+    path('admin/', admin.site.urls),
+    path('news/', include('news.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
